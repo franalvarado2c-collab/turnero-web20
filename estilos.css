@@ -1,0 +1,183 @@
+ /* =========================================
+   VARIABLES CSS - DÍA 19
+   ========================================= */
+
+:root {
+    --color-principal: darkblue;
+    --color-fondo-libre: #eef6ff;
+    --color-fondo-ocupado: #ffe0e0;
+    --color-fondo-tarjeta: #f0f0f0;
+    --color-borde: #cddcf0;
+}
+
+
+/* =========================================
+   ESTILOS GENERALES
+   ========================================= */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: white;
+}
+
+h1 {
+    color: rgb(0, 139, 44);
+    font-size: 28px;
+}
+
+h2 {
+    color: #333;
+}
+
+
+/* =========================================
+   CALENDARIO - DÍA 15
+   ========================================= */
+
+.calendario {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-bottom: 30px;
+}
+
+
+/* Encabezados de los días */
+
+.dia-header {
+    background-color: #dbeafe;
+    border: 1px solid #b8cde5;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* Celdas libres */
+
+.celda {
+    background-color: var(--color-fondo-libre);
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+
+    /* Sombra - DÍA 19 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Celdas ocupadas */
+
+.celda.ocupada {
+    background-color: var(--color-fondo-ocupado);
+    border-color: #f5b8b8;
+    color: #a13d3d;
+}
+
+
+/* =========================================
+   FORMULARIO - DÍA 16
+   ========================================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+}
+
+
+/* Campos del formulario */
+
+input,
+textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+
+/* Área de texto */
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+
+/* Botón */
+
+button {
+    background-color: var(--color-principal);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    /* Transición - DÍA 19 */
+    transition: background-color 0.2s ease;
+}
+
+
+/* Efecto al pasar el mouse */
+
+button:hover {
+    background-color: #4169e1;
+    transform: scale(1.03);
+}
+
+
+/* =========================================
+   RESPONSIVE - DÍA 17
+   ========================================= */
+
+/* Primera regla responsive */
+
+@media (max-width: 600px) {
+
+    .calendario {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+
+/* Segunda regla responsive */
+
+@media (max-width: 400px) {
+
+    body {
+        margin: 10px;
+    }
+
+    .calendario {
+        grid-template-columns: 1fr;
+    }
+
+    input,
+    textarea,
+    button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
